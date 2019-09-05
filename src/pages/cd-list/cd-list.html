@@ -6,6 +6,12 @@
         <ion-title>CdListPage</ion-title>
     </ion-navbar>
 </ion-header>
-<ion-content paddig>
-    
-</ion-content>
+<ion-content padding>
+        <ion-list *ngIf="CDs">
+            <button ion-item [color]="cd.isPreter?'secondary_light':'danger_light'"
+            *ngFor="let cd of CDs; let i = index" (click)="showCD(i)">
+        <ion-icon name="power" [color]="cd.isPreter?'secondary':'danger'"></ion-icon>
+    {{cd.name}}
+    </button>
+        </ion-list>
+    </ion-content>
